@@ -1,0 +1,6 @@
+
+<%= form_for(task, :remote => true) do |f| %>
+<%= f.check_box :complete, :onchange => '$(this.form).submit();' %>
+<%= f.label :complete, task.name %>
+ <%= link_to "(remove)", task,:remote=> true, method: :delete, data: {confirm: "Are you sure?"} %>
+<% end %>
